@@ -1,0 +1,77 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #add1f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* height: 50%; */
+    height: auto;   /* ✅ let height grow automatically */
+    transition: height 0.3s ease; 
+}
+.container h1{
+    font-size: 50px;
+}
+.container #subjectselection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    width: 100%;
+}
+#subjno{
+    width: 60%;
+    margin: 10px;
+    padding: 10px;
+}
+#generate{
+    width: 30%;
+    padding: 7px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#subjectInputs{
+    margin-top: 20px;
+}
+table{
+    margin: 0;
+    width: 100%;
+}
+th, td{
+    padding: 4px;
+}
+th{
+    font-size: 20px;
+    color: black;
+    width: 35%;
+}
+select{
+    font-size: 20px;
+    color: black;
+    padding: 4px;
+}
+input{
+    width: 90%;
+    padding: 9px;
+}
+#btn{
+    display: none;
+    margin: 20px auto;
+    padding: 7px;
+    font-size: 17px;
+    border-radius: 9px;
+    cursor: pointer;
+    
+}
+#btn:hover{
+    background-color: rgb(107, 237, 107);
+}

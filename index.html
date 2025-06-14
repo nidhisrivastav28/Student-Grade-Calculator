@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Grade Calculator</title>
+</head>
+
+<body>
+    <div class="container" id="card">
+        <h1>Calculate Your Grade</h1>
+        <div id="subjectselection">
+            <input type="number" id="subjno" placeholder="Enter the number of subjects:">
+            <button onclick="generateInputs()" id="generate">Generate</button>
+        </div>
+        
+
+        <form action="" onsubmit="calMarks(event)">
+            <div id="subjectInputs"></div>
+            <button id="btn" type="submit">Submit</button>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
