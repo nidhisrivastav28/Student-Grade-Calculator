@@ -1,25 +1,49 @@
 body{
     font-family: Arial, sans-serif;
-    background-color: #add1f5;
+    background-image: url(bg2.webp);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image:url(pexels-cottonbro-7013904.jpg)  ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity .5s;
+    
 }
 .container{
     background-color: #ffffff;
     padding: 30px 40px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    /* height: 50%; */
-    height: auto;   /* ✅ let height grow automatically */
+    height: auto; 
     transition: height 0.3s ease; 
+    background: rgba(209, 223, 235, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 0px 0px rgba(255, 255, 255, 0);
+  position: relative;
+  overflow: hidden;
 }
 .container h1{
     font-size: 50px;
+    color: #494545;
+     user-select: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .container #subjectselection{
     display: flex;
@@ -30,14 +54,27 @@ body{
 }
 #subjno{
     width: 60%;
-    margin: 10px;
-    padding: 10px;
+    margin: 10px ;
+    padding: 10px 17px;
+    border-radius: 20px;
 }
 #generate{
     width: 30%;
     padding: 7px;
     font-size: 20px;
     cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(198, 247, 198);
+    border: none;
+    backdrop-filter: blur(20px);
+    justify-content: center;
+    border: 1px solid rgba(0, 255, 34, 0.3);
+    box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 0px 0px rgba(255, 255, 255, 0);
+     user-select: none;
 }
 #subjectInputs{
     margin-top: 20px;
@@ -48,6 +85,8 @@ table{
 }
 th, td{
     padding: 4px;
+    border-radius: 4px;
+    
 }
 th{
     font-size: 20px;
@@ -55,21 +94,52 @@ th{
     width: 35%;
 }
 select{
-    font-size: 20px;
+    font-size: 13px;
     color: black;
     padding: 4px;
+    border-block-color: initial;
+    border-radius: 5px;
+    background-color: rgba(248, 246, 243, 0.281)
 }
+select:focus{
+    border: none;
+}
+option{
+    color: #000000;
+    background-color: #816e6e2d;
+}
+
+
+select{
+    background: #00000013;
+}
+
 input{
     width: 90%;
     padding: 9px;
+    border-radius: 10px;
+    border-color: #816e6e;
+    border-style: solid;
+    background: transparent;
+    transition: border-color 2s ease;
+}
+input:focus-visible {
+    border-color: #ff0000;
 }
 #btn{
     display: none;
     margin: 20px auto;
-    padding: 7px;
-    font-size: 17px;
+    padding: 7px 12px;
+    font-size: 15px;
+    font-weight: 300;
     border-radius: 9px;
     cursor: pointer;
+    color: #000;
+    background-color: rgba(103, 148, 148, 0.301);
+    border: none;
+    transition: color 1s ease;
+    transition: background 1s ease;
+    user-select: none;
     
 }
 #btn:hover{
