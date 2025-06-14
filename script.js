@@ -1,32 +1,62 @@
 function generateInputs() {
-    const count = document.getElementById('subjno').value;
+    const countField = document.getElementById('subjno');
+    const count = countField.value;
     const input = document.getElementById('subjectInputs');
     const submitbtn = document.getElementById('btn');
+
     input.innerHTML = '';
+    generate.style.display = 'none';
 
     for (let i = 1; i <= count; i++) {
         input.innerHTML += `
-       
-        <table>
-            <tr> 
-                <th>
-                    <select class="subject-select" id="select" onchange="filterSubjects()">Select the subject
-                        <option value="">Select</option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Chemistry">Chemistry</option>
-                        <option value="Physics">Physics</option>
-                        <option value="Hindi">Hindi</option>
-                        <option value="Computer">Computer</option>
-                    </select>
-                </th>
-                <td><input type="number" name="" id="cmarks${i}" placeholder="Enter the marks" min="0" max="100" required></td>
-            </tr>
-        </table>
-        
+            <table>
+                <tr> 
+                    <th>
+                        <select class="subject-select" id="select${i}" onchange="filterSubjects()">
+                            <option value="">Select</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Computer">Computer</option>
+                        </select>
+                    </th>
+                    <td>
+                        <input type="number" id="cmarks${i}" placeholder="Enter the marks" min="0" max="100" required>
+                    </td>
+                </tr>
+            </table>
         `;
     }
+
+    // Hide the input field after use
+    countField.style.display = 'none';
+
+    // Add validation for marks
+    for (let i = 1; i <= count; i++) {
+        const markInput = document.getElementById(`cmarks${i}`);
+    }
+
     submitbtn.style.display = 'block';
 }
+
+//function to validate Generate Input: commit made on version2
+function handleGenerateClick() {
+    const input = document.getElementById('subjno').value;
+    if (input>0 && input<6) {
+      generateInputs();
+    }
+     else {
+        if (input>6) {
+            alert("exceeds subjects");
+        } else {
+           alert("Please enter valid input"); 
+        }
+        
+    }
+      
+  }
+
 //Subject Filtering
 function filterSubjects(){
     const selects=document.querySelectorAll('.subject-select');
@@ -78,9 +108,20 @@ function calMarks(event) {
         alert(`Average=${avg}\nGrade=C\nFair!!`)
     }
     else if ((avg < 50) && (avg >= 40)) {
-        alert(`Average=${avg}\nGrade=A+\nWork Hard!!`)
+        alert(`Average=${avg}\nGrade=D\nWork Hard!!`)
     }
     else {
         alert(`Average=${avg}\nGrade=F\nFail!!`)
     }
 }
+
+window.transitionToPage = function(href) {
+    document.querySelector('body').style.opacity = 0
+    setTimeout(function() { 
+        window.location.href = href
+    }, 500)
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    document.querySelector('body').style.opacity = 1
+})
